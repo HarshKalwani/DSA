@@ -113,6 +113,22 @@ public class MyLinkedList {
         temp.next = null;
     }
 
+    public void removeFromEnd(){
+        if(isEmpty()) return;
+        if(head==tail){
+            head=tail=null;
+            return;
+        }
+
+        Node current = head;
+        while(current.next !=tail){
+            current = current.next;
+
+        }
+        current.next=null;
+        tail=current;
+    }
+
     public String toString(){
         Node current = head;
         StringBuilder result = new StringBuilder();

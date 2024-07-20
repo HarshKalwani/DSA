@@ -16,7 +16,8 @@ public class Mainnew {
         // System.out.println(list);
         // list.insertAt(12, 2);
         // System.out.println(list);
-        list.reverse();
+        // list.reverse();
+        list.removeFromStart();
         System.out.println(list);
 
     }

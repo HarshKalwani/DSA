@@ -105,7 +105,13 @@ public class MyLinkedList {
         head=current;
     }
 
-    
+    public void removeFromStart(){
+        if(isEmpty()) return;
+
+        Node temp = head;
+        head=head.next;
+        temp.next = null;
+    }
 
     public String toString(){
         Node current = head;

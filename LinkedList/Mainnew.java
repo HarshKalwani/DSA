@@ -18,7 +18,8 @@ public class Mainnew {
         // System.out.println(list);
         // list.reverse();
         // list.removeFromStart();
-        list.removeFromEnd();
+        // list.removeFromEnd();
+        list.removeNthFromEnd(2);
         System.out.println(list);
 
     }

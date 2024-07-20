@@ -129,6 +129,71 @@ public class MyLinkedList {
         tail=current;
     }
 
+
+    public void removeNthFromEndFast(int n){
+        if(isEmpty()) return;
+        if(head.next == null) {
+            head=null;
+            return;
+        }
+
+        Node fast = head;
+        Node current = head;
+        Node prev = null;
+
+        while(n > 1 && fast !=null){
+            fast = fast.next;
+            n--;
+        }
+
+        while (fast.next !=null) {
+            prev=current;
+            current = current.next;
+            fast=fast.next;
+        }
+
+
+        prev.next = current.next;
+        current.next = null; //garbage collector by java 
+    }
+
+
+    public void removeNthFromEnd(int n){
+        if(isEmpty()) return;
+        if(head.next == null) {
+            head=null;
+            return;
+        }
+
+        Node current = head;
+        int totalNodes = 0;
+        while (current != null) {
+            totalNodes++;
+            current = current.next;
+        }
+
+        int indexFromFront = totalNodes - n +1;
+        System.out.println(indexFromFront);
+
+        Node prev= null;
+        current=head;
+
+        while (indexFromFront > 1 && current!=null) {
+            indexFromFront--;
+            prev=current;
+            current = current.next;
+        }
+
+        if(prev == null){
+            head = current.next;
+            current.next=null;
+        }
+
+        prev.next = current.next;
+        current.next = null;
+    }
+    
+
     public String toString(){
         Node current = head;
         StringBuilder result = new StringBuilder();

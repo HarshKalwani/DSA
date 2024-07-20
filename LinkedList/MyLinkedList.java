@@ -72,6 +72,23 @@ public class MyLinkedList {
         return head==null && tail == null;
     }
 
+
+    public void insertAt(int value , int index){
+        if(isEmpty()) throw new IllegalArgumentException();
+        Node node = new Node(value);
+        Node current= head;
+        Node prev=null;
+
+        while (index > 0 && current !=null) {
+            prev = current;
+            current= current.next;
+            index--;
+        }
+
+        prev.next = node;
+        node.next = current;
+    }
+
     public String toString(){
         Node current = head;
         StringBuilder result = new StringBuilder();

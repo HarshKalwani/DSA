@@ -10,11 +10,13 @@ public class Mainnew {
         list.insert(5);
 
         System.out.println(list);
-        System.out.println(list.sum());
-        System.out.println(list.indexOf(2));
-        list.insertFirst(10);
-        System.out.println(list);
-        list.insertAt(12, 2);
+        // System.out.println(list.sum());
+        // System.out.println(list.indexOf(2));
+        // list.insertFirst(10);
+        // System.out.println(list);
+        // list.insertAt(12, 2);
+        // System.out.println(list);
+        list.reverse();
         System.out.println(list);
 
     }

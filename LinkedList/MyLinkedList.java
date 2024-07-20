@@ -89,6 +89,24 @@ public class MyLinkedList {
         node.next = current;
     }
 
+    public void reverse(){
+        if(head ==null || head.next==null) return;
+        Node prev = null;
+        Node current = head;
+        Node next = head.next;
+
+        while(next!=null){
+            current.next= prev;
+            prev=current;
+            current = next;
+            next=next.next;
+        }
+        current.next= prev;
+        head=current;
+    }
+
+    
+
     public String toString(){
         Node current = head;
         StringBuilder result = new StringBuilder();

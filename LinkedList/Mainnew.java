@@ -22,7 +22,8 @@ public class Mainnew {
         // list.removeNthFromEnd(2);
         System.out.println(list);
         // list.printRec();
-        list.swapNode();
+        // list.swapNode();
+        list.revRecc();
         System.out.println(list);
     }
 }

@@ -217,6 +217,25 @@ public class MyLinkedList {
         return secNode;
     }
 
+    public void swapNode(){
+        head=swapNode(head);
+    }
+
+    public Node revRecc(Node head){
+        if(head == null || head.next == null) return head ; 
+        Node rest = revRecc(head.next);
+        Node next = head.next;
+
+        next.next=head;
+        head.next=null;
+
+        return rest;
+    }
+
+    public void revRecc(){
+        head = revRecc(head);
+    }
+
 
     public String toString(){
         Node current = head;

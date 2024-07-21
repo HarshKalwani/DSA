@@ -19,8 +19,9 @@ public class Mainnew {
         // list.reverse();
         // list.removeFromStart();
         // list.removeFromEnd();
-        list.removeNthFromEnd(2);
+        // list.removeNthFromEnd(2);
         System.out.println(list);
-
+        // list.printRec();
+        System.out.println(list);
     }
 }

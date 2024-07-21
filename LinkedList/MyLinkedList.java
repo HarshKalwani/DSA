@@ -192,7 +192,20 @@ public class MyLinkedList {
         prev.next = current.next;
         current.next = null;
     }
-    
+
+
+    public void printRec(Node head){
+        if(head==null) return;
+
+        System.out.print(head.data + "->");
+        printRec(head.next);
+        // System.out.print(head.data + "->");  //this one is for backtracking 
+    }
+
+    public void printRec(){
+        printRec(head);
+    }
+
 
     public String toString(){
         Node current = head;

@@ -236,6 +236,74 @@ public class MyLinkedList {
         head = revRecc(head);
     }
 
+    public Node reverseKGroup(Node head , int k){
+        if(head == null || head.next == null) return head;
+
+        int count = 0;
+        Node current = head;
+        Node prev=null;
+        Node next = null;
+
+        while(count < k && current !=null){
+            current = current.next;
+            count ++;
+        } //to 3
+
+        if(count < k) return head;  //for remaining Nodes 
+
+        current = head;
+        count = 0;
+
+        while(count < k && current !=null){
+            next = current.next;
+            current.next = prev;
+            prev=current;
+            current = next;
+            count++;
+        }
+
+
+        if(next!=null){
+            head.next = reverseKGroup(next, k);  //if current is at 3 then head will be at 2 so return prev;(kum smj aya ) 
+        }
+
+        return prev;
+
+    }
+
+    public boolean hasCycle(Node head){
+        if(isEmpty())return false;
+
+        Node slow =head;
+        Node fast = head;
+
+        while (fast!=null && fast.next !=null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow){
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    public Node middleOfLinkedList(Node head){
+        if(isEmpty()) return null;
+
+        Node slow =head;
+        Node fast = head;
+
+        while (fast!=null && fast.next !=null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
+
 
     public String toString(){
         Node current = head;

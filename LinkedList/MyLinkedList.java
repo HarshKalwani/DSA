@@ -1,5 +1,8 @@
 package LinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 class Node{
     public int data;
     public Node next = null;
@@ -302,6 +305,42 @@ public class MyLinkedList {
         }
 
         return slow;
+    }
+
+    public Node removeLoopNode(Node head){
+        if(isEmpty()) return head;
+        
+        Set<Node> log = new HashSet<>();
+        Node current = head; 
+        Node prev = null;
+
+        log.add(current);
+
+        while(current != null){
+            prev = current;
+            current = current.next;
+            if(log.contains(current)){
+                prev.next = null;
+            }
+
+            log.add((current));
+        }
+        return head;
+    }
+
+
+    public Node removeDuplicate(Node head){
+        if(isEmpty()) return head;
+
+        Node current = head; 
+        while(current !=null && current.next != null){
+            if(current.data == current.next.data){
+                Node nexNode = current.next;
+                current.next = nexNode.next;
+                nexNode.next = null;
+            }
+            current = current.next;
+        }
     }
 
 

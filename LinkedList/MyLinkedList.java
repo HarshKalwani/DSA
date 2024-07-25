@@ -338,8 +338,9 @@ public class MyLinkedList {
                 Node nexNode = current.next;
                 current.next = nexNode.next;
                 nexNode.next = null;
+            }else{
+                current = current.next;
             }
-            current = current.next;
         }
     }
 

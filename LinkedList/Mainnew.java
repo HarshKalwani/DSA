@@ -23,7 +23,7 @@ public class Mainnew {
         System.out.println(list);
         // list.printRec();
         // list.swapNode();
-        list.revRecc();
-        System.out.println(list);
+        // list.revRecc();
+        // System.out.println(list);
     }
 }

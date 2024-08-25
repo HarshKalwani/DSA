@@ -34,7 +34,7 @@ public class MyQueue {
             System.out.println("Queue is empty");
             return -1;
         }
-        front=(front+1) % size;
+        front=(front+1)%size;
         int value = items[front];
         items[front] = 0;
         count--;

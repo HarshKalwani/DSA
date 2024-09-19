@@ -1,5 +1,6 @@
 package Arrays;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -50,6 +51,6 @@ public class InsertionTwoArray {
         int[]num1 = new int[]{9,4,9,8,4};
         int[]num2 = new int[]{4,9,5};
 
-        System.out.println(inter.insertion(num1, num2));
+        System.out.println(Arrays.toString(inter.insertion(num1, num2)));
     }
 }

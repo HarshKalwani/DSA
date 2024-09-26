@@ -96,16 +96,16 @@ public class MyLinkedList {
         if(head ==null || head.next==null) return;
         Node prev = null;
         Node current = head;
-        Node next = head.next;
+        Node next = null;
 
-        while(next!=null){
-            current.next= prev;
-            prev=current;
+        while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
             current = next;
-            next=next.next;
         }
-        current.next= prev;
-        head=current;
+        head = prev;
+
     }
 
     public void removeFromStart(){

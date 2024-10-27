@@ -105,7 +105,6 @@ public class MyLinkedList {
             current = next;
         }
         head = prev;
-
     }
 
     public void removeFromStart(){
@@ -342,6 +341,7 @@ public class MyLinkedList {
                 current = current.next;
             }
         }
+        return head;
     }
 
 

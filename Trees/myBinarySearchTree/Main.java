@@ -6,7 +6,7 @@ public class Main {
         // tree.insert(1);
         // tree.insert(8);
 
-        int[] numbers = new int[]{7,3,9,1,4,8,10};
+        int[] numbers = new int[]{7,3,4,8,10,2};
         for(int num : numbers){
             tree.insert(num);
         }
@@ -19,9 +19,12 @@ public class Main {
 
         // tree.preOrderTraverse();
         // tree.inOrderTraverse();
-        tree.postOrderTraverse();
+        // tree.postOrderTraverse();
         // System.out.println(tree.getMin());
 
-        System.out.println(tree.isEqual(tree2));
+        // System.out.println(tree.isEqual(tree2));
+
+        // tree.levelOrderTraversalBadWay();
+        System.out.println(tree.levelOrderTraversal());
     }
 }

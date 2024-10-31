@@ -1,3 +1,4 @@
+import java.util.*;
 class TreeNode {
     int data;
     TreeNode leftChild;
@@ -220,5 +221,64 @@ public class BinarySearchTree {
     public List<Integer> nodesAtKDistance(int k ){
         List<Integer> result = new LinkedList<>();
         nodesAtKDistance(root , k, result);
+        return result;
+    }
+
+    //Leetcode 98 -> Validate Binary Search Tree
+
+    private boolean validateBST(TreeNode root ,  long min, long max){
+        if(root == null) return true;
+
+        if(root.data <= min || root.data >=max) return false;
+
+        return validateBST(root.leftChild, min, root.data) && validateBST(root.rightChild, root.data, max);
+    }
+
+    public boolean isValidBST(TreeNode root){
+        return validateBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    public void levelOrderTraversalBadWay(){
+        int hight = getHeightOfTree();
+        for(int i = 0 ; i <= hight ; i++){
+            System.out.println(nodesAtKDistance(i));
+        }
+    }
+
+    
+
+    public List<List<Integer>> levelOrderTraversal(){
+        List <List<Integer>> list = new LinkedList<>();
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root);
+        while (!q.isEmpty()) {
+            // TreeNode node= q.poll();
+            // list.add(node.data);
+
+            // if(node.leftChild !=null){
+            //     q.offer(node.leftChild);
+            // }
+
+            // if(node.rightChild !=null){
+            //     q.offer(node.rightChild);
+            // }
+
+            int size = q.size();
+            List<Integer> temp = new LinkedList<>();
+            for(int i = 0 ; i < size ; i ++){
+                TreeNode node = q.poll();
+                temp.add(node.data);
+
+                if(node.leftChild != null){
+                    q.offer(node.leftChild);
+                }
+                if(node.rightChild != null){
+                    q.offer(node.rightChild);
+                }
+            }
+
+            list.add(temp);
+        }
+        return list;
     }
 }
